@@ -14,6 +14,7 @@
             brave
             unzip
             unrar
+            gh
         ];
 
         file.".config/wall".source = ../modules/themes/wall;
