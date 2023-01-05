@@ -93,6 +93,8 @@
             pulse.enable = true;
             jack.enable = true;
         };
+
+        flatpak.enable = true;
     };
 
     nix = {

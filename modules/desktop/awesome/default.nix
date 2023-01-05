@@ -1,3 +1,5 @@
+{ config, lib, pkgs, ... }:
+
 {
     programs.dconf.enable = true;
 
@@ -20,5 +22,10 @@
                 enable = true;
             };
         };
+    };
+
+    xdg.portal = {
+        enable = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 }

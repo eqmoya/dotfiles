@@ -1,0 +1,21 @@
+* Installation
+
+- iso
+    - prepare partitions
+    - mount
+    - swap
+    - clone repo in /mnt/etc/nixos/.flake
+    - nixos-install --flake .#<host>
+    - set root password
+    - reboot
+
+- sudo passwd <user>
+- sudo mv /etc/nixos/.flake ~/
+- sudo chown -R <user>:users ~/.flake
+
+* Upgrade
+
+- sudo nixos-rebuild switch --flake ~/.flake#desktop
+
+* Flatpak setup
+- flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
