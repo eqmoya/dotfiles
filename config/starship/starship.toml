@@ -1,0 +1,46 @@
+format = """
+$username\
+$hostname\
+$jobs\
+$directory\
+$container\
+$character"""
+
+right_format = """
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+"""
+
+add_newline = false
+
+[directory]
+style = "bold bright-blue"
+
+[character]
+success_symbol = "[ ](green)"
+error_symbol = "[ ](red)"
+vimcmd_symbol = "[ ](dimmed green)"
+
+[git_branch]
+format = " [$branch(:$remote_branch)]($style)"
+style = "bright-blue"
+truncation_symbol = "⋯"
+truncation_length = 11
+ignore_branches = ["main", "master"]
+only_attached = true
+
+[git_status]
+style = "bold bright-blue"
+format = "([$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed]($style))"
+conflicted = " [=](bright-magenta)"
+ahead = " [⇡[${count}](bold white)](green)"
+behind = " [⇣[${count}](bold white)](red)"
+diverged = " [⇕⇡[${ahead_count}](regular white) ⇣[${behind_count}](regular white)](bright-magenta)"
+untracked = " [?](bright-yellow)"
+stashed = " [$](white)"
+modified = " [~](yellow)"
+staged = " [+[$count](bold white)](cyan)"
+renamed = " [»](bright-blue)"
+deleted = " [-](red)"
